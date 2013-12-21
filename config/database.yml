@@ -1,0 +1,36 @@
+development:
+  adapter: sqlite3
+  database: db/peppermill_development.sqlite3
+  pool: 5
+  timeout: 5000
+
+staging:
+  adapter: sqlite3
+  database: db/peppermill_staging.sqlite3
+  pool: 5
+  timeout: 5000
+
+# # Example RDS connection
+# staging:
+#   adapter: mysql2
+#   encoding: utf8
+#   reconnect: false
+#   database: peppermillstage
+#   username: peppermillstage
+#   password: password
+#   host: peppermillstage.cmz4dbxjaw4z.us-east-1.rds.amazonaws.com
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: peppermill_production
+  username: peppermill_production
+  password:
+  host: localhost
+
+test: &test
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
