@@ -12,3 +12,4 @@ db/peppermill_development.sqlite3-journal
 db/test.sqlite3
 db/test.sqlite3-journal
 spec/support/uploads/
+node_modules
