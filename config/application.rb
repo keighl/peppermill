@@ -21,7 +21,7 @@ module Peppermill
     config.assets.enabled = true
 
     config.assets.precompile += %w( application.css lt_ie9.css )
-    config.assets.precompile += %w( application.js  )
+    config.assets.precompile += %w( application.js modernizr.js  )
 
     config.assets.version = '1.0'
 

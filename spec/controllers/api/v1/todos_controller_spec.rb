@@ -29,18 +29,9 @@ describe Api::V1::TodosController, focus: true do
         response.should render_template('index')
       end
 
-      it "assigns completed todos to @todos[:complete]" do
-        complete_todos = []
-        todos_mock.should_receive(:complete).and_return complete_todos
+      it "assigns todos to @todos" do
         get :index, @params
-        assigns[:todos][:complete].should eq(complete_todos)
-      end
-
-      it "assigns incomplete todos to @todos[:incomplete]" do
-        incomplete_todos = []
-        todos_mock.should_receive(:incomplete).and_return incomplete_todos
-        get :index, @params
-        assigns[:todos][:incomplete].should eq(incomplete_todos)
+        assigns[:todos].should eq(todos_mock)
       end
     end
 
@@ -201,7 +192,7 @@ describe Api::V1::TodosController, focus: true do
     end
   end
 
-    # ##################################################################
+  # ##################################################################
 
   describe "DELETE #destroy" do
 

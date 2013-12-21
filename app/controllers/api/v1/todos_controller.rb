@@ -1,10 +1,7 @@
 class Api::V1::TodosController < Api::V1::ApiController
 
   def index
-    @todos = {
-      complete: current_user.todos.complete,
-      incomplete: current_user.todos.incomplete
-    }
+    @todos = current_user.todos
   end
 
   def show
@@ -14,6 +11,7 @@ class Api::V1::TodosController < Api::V1::ApiController
   def create
     @todo = current_user.todos.build params[:todo]
     if @todo.save
+      @todo.reload
       render :show, status: :created
     else
       render_api_errors t('api.error_title'), @todo.errors

@@ -16,7 +16,7 @@ class Api::V1::UsersController < Api::V1::ApiController
   end
 
   def create
-    @user = User.new params[:user]
+    @user = self.current_user = @user = User.new params[:user]
     if @user.save
       render :me, status: :created
     else

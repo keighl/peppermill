@@ -1,16 +1,12 @@
 json.data do
 
-  json.todos do
-    json.complete do
-      json.array!(@todos[:complete]) do |todo|
-        json.partial! "todo", todo: todo
-      end
-    end
+  json.current_user do
+    json.partial! "api/v1/users/user", user: current_user
+  end
 
-    json.incomplete do
-      json.array!(@todos[:incomplete]) do |todo|
-        json.partial! "todo", todo: todo
-      end
+  json.todos do
+    json.array!(@todos) do |todo|
+      json.partial! "todo", todo: todo
     end
   end
 end

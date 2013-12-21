@@ -19,4 +19,6 @@ Peppermill::Application.routes.draw do
       end
     end
   end
+
+  match '*path' => 'application#index'
 end
