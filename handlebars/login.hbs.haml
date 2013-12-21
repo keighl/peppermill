@@ -1,5 +1,5 @@
 
-<a href="" {{action "toggleIsSignup" on="click"}}>
+<a href="" {{action "toggleSignup" on="click" }}>
 {{#if isSignup}}
 Log in?
 {{else}}
@@ -7,7 +7,7 @@ Join?
 {{/if}}
 </a>
 
-{{#if isSignup}}
+<div {{bind-attr class="isSignup::cb-hidden"}}>
 
 <form {{action "signup" on="submit"}}>
 .form-item
@@ -23,8 +23,11 @@ Join?
   %label{ for: 'username' } Confirm Password
   {{input value=signup_password_confirmation type="password" placeholder="Confirm password" classNames="input"}}
 {{input class="button button-action button-full" type="submit" value="Join Now"}}
+</form>
 
-{{else}}
+</div>
+
+<div {{bind-attr class="isSignup:cb-hidden"}}>
 
 <form {{action "login" on="submit"}}>
 .form-item
@@ -35,4 +38,5 @@ Join?
   {{input value=login_password type="password" placeholder="Password" classNames="input"}}
 {{input class="button button-action button-full" type="submit" value="Log In"}}
 </form>
-{{/if}}
+
+</div>
