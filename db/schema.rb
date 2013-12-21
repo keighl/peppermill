@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(:version => 20131221143540) do
 
   create_table "todos", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "priority",   :default => 0
+    t.boolean  "priority",   :default => false
     t.string   "name"
     t.date     "due_at"
     t.boolean  "complete",   :default => false

@@ -2,7 +2,7 @@ class CreateTodos < ActiveRecord::Migration
   def change
     create_table :todos do |t|
       t.integer :user_id
-      t.integer :priority, default: 0
+      t.boolean :priority, default: false
       t.string :name
       t.date :due_at
       t.boolean :complete, default: false

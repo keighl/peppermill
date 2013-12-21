@@ -39,10 +39,6 @@ PP.TodoView = Ember.View.extend
 
   actions:
 
-    toggleEditMode: ->
-      @set 'todoEditName', @get('todo.name')
-      @set 'editMode', true
-
     toggleComplete: ->
       return if @get 'requestInProgress'
       @toggleProperty 'todo.complete'
@@ -60,6 +56,15 @@ PP.TodoView = Ember.View.extend
       @set('editMode', false) unless @get 'todoEditName'
       @send 'update'
 
+    toggleEditMode: ->
+      @set 'todoEditName', @get('todo.name')
+      @set 'editMode', true
+
+    togglePriority: ->
+      return if @get 'requestInProgress'
+      @toggleProperty 'todo.priority'
+      @send 'update'
+
     update: ->
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
@@ -73,6 +78,7 @@ PP.TodoView = Ember.View.extend
         todo:
           complete: todo.complete
           due_at: todo.due_at
+          priority: todo.priority
 
       if self.get('todoEditName')
         payload.todo.name = self.get 'todoEditName'
