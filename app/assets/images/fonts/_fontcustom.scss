@@ -1,0 +1,97 @@
+//
+// Icon Font: fontcustom
+//
+
+@font-face {
+  font-family: "fontcustom";
+  src: url("/assets/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.eot");
+  src: url("/assets/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.eot?#iefix") format("embedded-opentype"),
+       url("/assets/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.woff") format("woff"),
+       url("/assets/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.ttf") format("truetype"),
+       url("/assets/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.svg#fontcustom") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+[data-icon]:before { content: attr(data-icon); }
+
+[data-icon]:before,
+.icon-back:before,
+.icon-camera:before,
+.icon-chevron:before,
+.icon-circle-check:before,
+.icon-clam:before,
+.icon-clock:before,
+.icon-close:before,
+.icon-close_panel:before,
+.icon-coin:before,
+.icon-comment:before,
+.icon-dice:before,
+.icon-download_app:before,
+.icon-facebook:before,
+.icon-fb:before,
+.icon-friends:before,
+.icon-github:before,
+.icon-instagram:before,
+.icon-invite:before,
+.icon-jelly:before,
+.icon-linkedin:before,
+.icon-menu:before,
+.icon-menu_you:before,
+.icon-open_panel:before,
+.icon-pawn:before,
+.icon-photocontest:before,
+.icon-plus:before,
+.icon-point:before,
+.icon-radar:before,
+.icon-settings:before,
+.icon-share:before,
+.icon-trophy:before,
+.icon-tw:before,
+.icon-twitter:before,
+.icon-x:before {
+  font-family: "fontcustom";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  text-decoration: inherit;
+}
+
+.icon-back:before { content: "\f100"; }
+.icon-camera:before { content: "\f101"; }
+.icon-chevron:before { content: "\f102"; }
+.icon-circle-check:before { content: "\f103"; }
+.icon-clam:before { content: "\f104"; }
+.icon-clock:before { content: "\f105"; }
+.icon-close:before { content: "\f106"; }
+.icon-close_panel:before { content: "\f107"; }
+.icon-coin:before { content: "\f108"; }
+.icon-comment:before { content: "\f109"; }
+.icon-dice:before { content: "\f10a"; }
+.icon-download_app:before { content: "\f10b"; }
+.icon-facebook:before { content: "\f10c"; }
+.icon-fb:before { content: "\f10d"; }
+.icon-friends:before { content: "\f10e"; }
+.icon-github:before { content: "\f10f"; }
+.icon-instagram:before { content: "\f110"; }
+.icon-invite:before { content: "\f111"; }
+.icon-jelly:before { content: "\f112"; }
+.icon-linkedin:before { content: "\f113"; }
+.icon-menu:before { content: "\f114"; }
+.icon-menu_you:before { content: "\f115"; }
+.icon-open_panel:before { content: "\f116"; }
+.icon-pawn:before { content: "\f117"; }
+.icon-photocontest:before { content: "\f118"; }
+.icon-plus:before { content: "\f119"; }
+.icon-point:before { content: "\f11a"; }
+.icon-radar:before { content: "\f11b"; }
+.icon-settings:before { content: "\f11c"; }
+.icon-share:before { content: "\f11d"; }
+.icon-trophy:before { content: "\f11e"; }
+.icon-tw:before { content: "\f11f"; }
+.icon-twitter:before { content: "\f120"; }
+.icon-x:before { content: "\f121"; }

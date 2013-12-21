@@ -92,6 +92,24 @@ PP.TodoView = Ember.View.extend
         self.set 'editMode', false
         controller.send 'handleError', res
 
+    deleteTodo: ->
+      return if @get 'requestInProgress'
+      @set 'requestInProgress', true
+      @send 'hideErrors'
+
+      self       = @
+      todo       = self.get 'todo'
+      controller = self.get 'controller'
+      payload    = PP.Utils.applyCredsToData
+        _method: 'DELETE'
+
+      $.post("#{PP.API_BASE}/todos/#{todo.id}", payload).then (res) ->
+        self.set 'requestInProgress', false
+        self.send 'destroy'
+      , (res) ->
+        self.set 'requestInProgress', false
+        controller.send 'handleError', res
+
 PP.TodoEditNameField = Ember.TextField.extend
   becomeFocused: ( ->
     self = @

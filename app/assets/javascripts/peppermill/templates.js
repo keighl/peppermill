@@ -94,7 +94,14 @@ function program3(depth0,data) {
   hashContexts = {};
   stack2 = helpers['if'].call(depth0, "view.todo.priority", {hash:{},inverse:self.program(10, program10, data),fn:self.program(8, program8, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n</a>\n");
+  data.buffer.push("\n</a>\n<a href='#' ");
+  hashContexts = {'on': depth0,'target': depth0};
+  hashTypes = {'on': "STRING",'target': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "deleteTodo", {hash:{
+    'on': ("click"),
+    'target': ("view")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n<span class='icon-x'></span>\n</a>\n");
   return buffer;
   }
 function program4(depth0,data) {
