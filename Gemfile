@@ -7,6 +7,7 @@ gem 'haml'
 gem 'exception_notification'
 gem 'sorcery'
 gem 'unicorn'
+gem 'jbuilder'
 
 group :development do
   gem 'capistrano', '2.14.2'

@@ -1,52 +1,8 @@
 en:
-  app_name: "FreeAssociation"
-  email: "Email Address"
-  password: "Password"
-  password_confirmation: "Password Confirmation"
-  first_name: "First Name"
-  last_name: "Last Name"
-  there_were_errors: "Oh snap! There were some errors."
-
-  account:
-    not_authenticated: "Sorry! You're not allowed in here!"
-    signin:
-      title: "Sigin"
-      success: "Welcome back, %{name}!"
-      error: "Sorry! Your email or password is invalid."
-    signout:
-      success: "Later!"
-    signup:
-      title: "Signup"
-      success: "Sweet! Thanks for signing up!"
-      error: "Sorry! There was problem with your sign up!"
-    update:
-      title: "My Account"
-      my_info: "My Info"
-      change_my_password: "Change My Password"
-      success: "Sweet! You account has been updated!"
-      error: "Sorry! There was problem with your updates!"
-    delete:
-      success: "See ya!"
-    password_reset:
-      sent: "Password reset instructions were sent to your email."
-      changed: "Your password has been changed!"
-
-  emails:
-    password_reset:
-      subject: "Change your password at Boilerapp"
-
-  admin:
-    confirm: "Are you sure?"
-    delete: "Delete"
-    save: "Save"
-    change: "Change"
-    edit: "Edit"
-    new: "New"
-    search: "Search"
-    actions: "Actions"
-    info: "Info"
-    password: "Password"
-    change_password: "Change Password"
-
+  api:
+    error_title: 'Oh snap!'
+    error_not_found: "That item doesn't exist"
+    error_500: "Some went wrong on our side!"
+    error_unauthorized: "Your credentials are invalid"
 
 
