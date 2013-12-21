@@ -1,7 +1,9 @@
 class Api::V1::TodosController < Api::V1::ApiController
 
   def index
-    @todos = current_user.todos
+    scope  = :by_incomplete
+    scope  = params[:sort].to_sym unless params[:sort].blank?
+    @todos = current_user.todos.send scope
   end
 
   def show

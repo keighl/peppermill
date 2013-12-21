@@ -33,6 +33,17 @@ describe Api::V1::TodosController, focus: true do
         get :index, @params
         assigns[:todos].should eq(todos_mock)
       end
+
+      it "runs the by_incompleteness by default" do
+        todos_mock.should_receive(:by_incomplete)
+        get :index, @params
+      end
+
+      it "runs another scope if passed" do
+        @params[:sort] = :by_due_date
+        todos_mock.should_receive(:by_due_date)
+        get :index, @params
+      end
     end
 
     describe 'without authentication' do
