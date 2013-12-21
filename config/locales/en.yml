@@ -4,5 +4,6 @@ en:
     error_not_found: "That item doesn't exist"
     error_500: "Some went wrong on our side!"
     error_unauthorized: "Your credentials are invalid"
-
+    object_destroy_errors: "There are problems deleting your %{model}"
+    object_destroyed: "Your %{model} was deleted"
 

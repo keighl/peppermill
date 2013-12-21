@@ -1,0 +1,1 @@
+json.(todo, :id, :created_at, :name, :complete, :priority)

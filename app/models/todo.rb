@@ -7,7 +7,7 @@ class Todo < ActiveRecord::Base
   # Scope ##################################
 
   scope :complete, where(complete: true)
-  scope :incomplete, where(complete: true)
+  scope :incomplete, where(complete: false)
 
   # Validations ############################
 

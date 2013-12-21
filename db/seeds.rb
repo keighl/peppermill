@@ -1,8 +1,7 @@
 User.create([
   {
-    :first_name => "Earle",
-    :last_name => "Dickens",
-    :email => "earle@example.com",
+    username: 'keighl',
+    :email => "me@keighl.com",
     :password => "password",
     :password_confirmation => "password"
   }
