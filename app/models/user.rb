@@ -11,10 +11,15 @@ class User < ActiveRecord::Base
 
   # Callbacks ########################
 
-  before_create :generate_token
+  before_save :generate_token
 
   def generate_token
-    self.token = SecureRandom.base64(30).tr('+/=lIO0', 'pqrsxyz')
+    rando = SecureRandom.base64(60).tr('+/=lIO0', 'pqrsxyz')
+    unless User.find_by_token(rando).nil?
+      generate_token #recurse
+    else
+      self.token = rando
+    end
   end
 
   # Validations #######################

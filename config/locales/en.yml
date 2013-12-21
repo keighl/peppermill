@@ -6,4 +6,5 @@ en:
     error_unauthorized: "Your credentials are invalid"
     object_destroy_errors: "There are problems deleting your %{model}"
     object_destroyed: "Your %{model} was deleted"
+    invalid_creds: 'Your email, username or password is incorrect'
 
