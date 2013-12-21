@@ -97,7 +97,7 @@ function program3(depth0,data) {
   data.buffer.push("\n</a>\n<a href='#' ");
   hashContexts = {'on': depth0,'target': depth0};
   hashTypes = {'on': "STRING",'target': "STRING"};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "deleteTodo", {hash:{
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "destroyTodo", {hash:{
     'on': ("click"),
     'target': ("view")
   },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
@@ -462,6 +462,76 @@ function program3(depth0,data) {
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input || (depth0 && depth0.input)),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
   data.buffer.push("\n</form>\n</div>\n");
+  return buffer;
+  
+});
+
+Ember.TEMPLATES["settings"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', hashContexts, hashTypes, escapeExpression=this.escapeExpression;
+
+
+  data.buffer.push("<form ");
+  hashContexts = {'on': depth0};
+  hashTypes = {'on': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "update", {hash:{
+    'on': ("submit")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push(">\n");
+  hashContexts = {'type': depth0,'valueBinding': depth0};
+  hashTypes = {'type': "STRING",'valueBinding': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'type': ("hidden"),
+    'valueBinding': ("upload_hash")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n<div class='form-item'>\n  <label for='username'>Username</label>\n  ");
+  hashContexts = {'name': depth0,'valueBinding': depth0,'classNames': depth0,'placeholder': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING",'classNames': "STRING",'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'name': ("username"),
+    'valueBinding': ("user.username"),
+    'classNames': ("input"),
+    'placeholder': ("Username")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n</div>\n<div class='form-item'>\n  <label for='email'>Email</label>\n  ");
+  hashContexts = {'name': depth0,'valueBinding': depth0,'classNames': depth0,'type': depth0,'placeholder': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING",'classNames': "STRING",'type': "STRING",'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'name': ("email"),
+    'valueBinding': ("user.email"),
+    'classNames': ("input"),
+    'type': ("email"),
+    'placeholder': ("Email")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n</div>\n<div class='form-item'>\n  <label for='password'>Password</label>\n  ");
+  hashContexts = {'name': depth0,'valueBinding': depth0,'classNames': depth0,'type': depth0,'placeholder': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING",'classNames': "STRING",'type': "STRING",'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'name': ("password"),
+    'valueBinding': ("password"),
+    'classNames': ("input"),
+    'type': ("password"),
+    'placeholder': ("Password")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n</div>\n<div class='form-item'>\n  <label for='password_confirmation'>Confirm Password</label>\n  ");
+  hashContexts = {'name': depth0,'valueBinding': depth0,'classNames': depth0,'type': depth0,'placeholder': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING",'classNames': "STRING",'type': "STRING",'placeholder': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'name': ("password_confirmation"),
+    'valueBinding': ("password_confirmation"),
+    'classNames': ("input"),
+    'type': ("password"),
+    'placeholder': ("Confirm password")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n</div>\n<div class='new-move-actions'>\n  <button class='button button-action button-full'>\n    Submit\n  </button>\n</div>\n</form>\n<hr>\nYour API Key:\n");
+  hashContexts = {'name': depth0,'valueBinding': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING"};
+  data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
+    'name': ("api_key"),
+    'valueBinding': ("user.token")
+  },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("\n");
   return buffer;
   
 });

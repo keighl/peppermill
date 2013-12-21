@@ -92,7 +92,7 @@ PP.TodoView = Ember.View.extend
         self.set 'editMode', false
         controller.send 'handleError', res
 
-    deleteTodo: ->
+    destroyTodo: ->
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
       @send 'hideErrors'

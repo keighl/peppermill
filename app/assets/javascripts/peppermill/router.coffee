@@ -44,6 +44,7 @@ PP.Route = Ember.Route.extend
         console.log reason
 
     updateCurrentUser: (user) ->
+      localStorage.PPAuthToken   = user.token if user?
       localStorage.PPCurrentUser = JSON.stringify user if user?
       PP.set 'currentUser', user
 
@@ -86,3 +87,15 @@ PP.IndexRoute = PP.AuthenticatedRoute.extend
   setupController: (controller, model) ->
     controller.set 'model', model
     @send 'setPageTitle', 'Todos'
+
+# Settings ############
+
+PP.SettingsRoute = PP.AuthenticatedRoute.extend
+  model: ->
+    self = @
+    $.getJSON("#{PP.API_BASE}/me", PP.Utils.creds()).then (res) ->
+      res.data
+
+  setupController: (controller, model) ->
+    controller.set 'model', model
+    @send 'setPageTitle', 'Me'
