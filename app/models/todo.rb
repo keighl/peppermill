@@ -20,14 +20,4 @@ class Todo < ActiveRecord::Base
   def establish_due_at
     self.due_at = Date.today if due_at.nil?
   end
-
-  # Priority Enum ###########################
-
-  def priority
-    TODO_PRIORITIES.key read_attribute(:priority)
-  end
-
-  def priority=(s)
-    write_attribute :priority, TODO_PRIORITIES[s.to_sym]
-  end
 end

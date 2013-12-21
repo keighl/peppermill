@@ -3,10 +3,6 @@ PP.LoginController = Ember.ObjectController.extend
   requestInProgress: false
   isSignup: false
 
-  toggleSignup: ->
-    @send 'hideErrors'
-    @toggleProperty 'isSignup'
-
   actions:
 
     resetController: ->
