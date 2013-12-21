@@ -7,6 +7,8 @@ public/robots.txt
 .sass-cache/
 db/peppermill_staging.sqlite3
 db/peppermill_staging.sqlite3-journal
+db/peppermill_development.sqlite3
+db/peppermill_development.sqlite3-journal
 db/test.sqlite3
 db/test.sqlite3-journal
 spec/support/uploads/

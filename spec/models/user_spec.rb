@@ -51,4 +51,14 @@ describe User do
       end
     end
   end
+
+  describe 'auth token' do
+    it "is generated on create" do
+      user = FactoryGirl.build :user
+      user.token.should be_nil
+      user.save
+      user.token.should_not be_nil
+
+    end
+  end
 end

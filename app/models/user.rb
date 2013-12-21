@@ -7,6 +7,14 @@ class User < ActiveRecord::Base
 
   authenticates_with_sorcery!
 
+  # Callbacks ########################
+
+  before_create :generate_token
+
+  def generate_token
+    self.token = SecureRandom.base64(30).tr('+/=lIO0', 'pqrsxyz')
+  end
+
   # Validations #######################
 
   # Username
