@@ -525,11 +525,12 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
     'placeholder': ("Confirm password")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n</div>\n<div class='new-move-actions'>\n  <button class='button button-action button-full'>\n    Submit\n  </button>\n</div>\n</form>\n<hr>\nYour API Key:\n");
-  hashContexts = {'name': depth0,'valueBinding': depth0};
-  hashTypes = {'name': "STRING",'valueBinding': "STRING"};
+  hashContexts = {'name': depth0,'valueBinding': depth0,'readonly': depth0};
+  hashTypes = {'name': "STRING",'valueBinding': "STRING",'readonly': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
     'name': ("api_key"),
-    'valueBinding': ("user.token")
+    'valueBinding': ("user.token"),
+    'readonly': ("readonly")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
   data.buffer.push("\n");
   return buffer;

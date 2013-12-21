@@ -16,8 +16,8 @@ PP.SettingsController = Ember.ObjectController.extend
         user:
           username: user.username
           email: user.email
-          password: user.password
-          password_confirmation: user.password_confirmation
+          password: self.get('password')
+          password_confirmation: self.get('password_confirmation')
 
       $.post("#{PP.API_BASE}/me", payload).then (res) ->
         self.set 'requestInProgress', false
