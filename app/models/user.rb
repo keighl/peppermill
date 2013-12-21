@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
-  attr_accessible :email,
-    :name,
+  attr_accessible :username,
+    :email,
     :password,
     :password_confirmation
 
@@ -9,31 +9,37 @@ class User < ActiveRecord::Base
 
   # Validations #######################
 
-  # Name
-  validates_presence_of :first_name
-  validates_presence_of :last_name
+  # Username
+  validates_format_of :username, with: /^\d*[a-zA-Z][a-zA-Z0-9]*$/, allow_blank: false
+  validates_uniqueness_of :username, case_sensitive: false
 
   # Email
-  validates_presence_of   :email
-  validates_uniqueness_of :email
-  validates_format_of     :email, :with => EMAIL_REGEX
+  validates_uniqueness_of :email, case_sensitive: false
+  validates_format_of  :email, with: EMAIL_REGEX, allow_blank: false
 
   # Password
-  validates_presence_of     :password, :on => :create
-  validates_confirmation_of :password, :if => :password
-  validates_length_of       :password, :minimum => 6, :maximum => 16, :if => :password
+  validates(:password, {
+    on: :create,
+    confirmation: true,
+    length: { within: 6..40 }
+  })
 
-  ############################
+  validates(:password_confirmation, {
+    on: :create,
+    presence: true
+  })
 
-  def name
-    "#{first_name} #{last_name}"
-  end
+  validates(:password, {
+    on: :update,
+    presence: true,
+    length: { within: 6..40 },
+    confirmation: true,
+    unless: lambda { |user| user.password.blank? }
+  })
 
-  def self.search(search = nil)
-    if search
-      where('first_name LIKE ? OR first_name LIKE ?', "%#{search}%", "%#{search}%")
-    else
-      scoped
-    end
-  end
+  validates(:password_confirmation, {
+    on: :update,
+    presence: true,
+    unless: lambda { |user| user.password.blank? }
+  })
 end
