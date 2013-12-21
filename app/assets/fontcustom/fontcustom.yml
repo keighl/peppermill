@@ -1,0 +1,3 @@
+output: ../images/fonts
+templates: [ scss ]
+preprocessor_path: /assets/fonts

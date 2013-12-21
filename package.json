@@ -1,0 +1,11 @@
+{
+  "name": "peppermill",
+  "version": "1.0.0",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-ember-handlebars": "~0.7.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-ember-templates": "~0.4.18",
+    "handlebars": "~1.1.2"
+  }
+}

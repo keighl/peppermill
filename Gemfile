@@ -16,6 +16,7 @@ group :development do
   gem 'mailcatcher'
   gem 'fontcustom'
   gem 'foreman'
+  gem 'guard-haml'
 end
 
 group :test do

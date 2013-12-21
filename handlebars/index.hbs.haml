@@ -1,0 +1,12 @@
+%h1 Todos
+
+%h3 Incomplete
+
+<form {{action "create" on="submit"}}>
+{{view Ember.TextField valueBinding="new_todo_name" placeholder='Add a todo...' classNames="new-todo-name"}}
+</form>
+
+{{#each todo in todos}}
+{{view PP.TodoView todoBinding='todo'}}
+{{/each}}
+
