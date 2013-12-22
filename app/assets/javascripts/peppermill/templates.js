@@ -617,7 +617,7 @@ function program4(depth0,data) {
   },inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || (depth0 && depth0.linkTo)),stack1 ? stack1.call(depth0, "logout", options) : helperMissing.call(depth0, "linkTo", "logout", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
-  data.buffer.push("\n    </div>\n    <br>\n    <br>\n    <div class='form-item'>\n      <label>Your API Key</label>\n      ");
+  data.buffer.push("\n    </div>\n    <br>\n    <br>\n    <div class='form-item'>\n      <label>Your API Token</label>\n      ");
   hashContexts = {'name': depth0,'valueBinding': depth0,'readonly': depth0,'classNames': depth0};
   hashTypes = {'name': "STRING",'valueBinding': "STRING",'readonly': "STRING",'classNames': "STRING"};
   data.buffer.push(escapeExpression(helpers.view.call(depth0, "Ember.TextField", {hash:{
