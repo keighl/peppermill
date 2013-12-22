@@ -150,15 +150,22 @@ function program4(depth0,data) {
 
 function program6(depth0,data) {
   
-  var buffer = '', hashContexts, hashTypes;
-  data.buffer.push("\n              <a class=\"button hdr-button-login\" href='' ");
-  hashContexts = {'on': depth0};
-  hashTypes = {'on': "STRING"};
-  data.buffer.push(escapeExpression(helpers.action.call(depth0, "loginButton", {hash:{
-    'on': ("click")
-  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push(">\n              <strong>Join</strong>\n              </a>\n              ");
+  var buffer = '', stack1, stack2, hashContexts, hashTypes, options;
+  data.buffer.push("\n              ");
+  hashContexts = {'classNames': depth0};
+  hashTypes = {'classNames': "STRING"};
+  options = {hash:{
+    'classNames': ("button hdr-button-login")
+  },inverse:self.noop,fn:self.program(7, program7, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  stack2 = ((stack1 = helpers.linkTo || (depth0 && depth0.linkTo)),stack1 ? stack1.call(depth0, "login", options) : helperMissing.call(depth0, "linkTo", "login", options));
+  if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
+  data.buffer.push("\n              ");
   return buffer;
+  }
+function program7(depth0,data) {
+  
+  
+  data.buffer.push("\n              <strong>Join</strong>\n              ");
   }
 
   data.buffer.push("<div class='main'>\n  <header class='hdr'>\n    <div class='container'>\n      <div class='hdr-inner'>\n        <div class='cb-table-auto hdr-logo-cell'>\n          <div class='cb-table-row'>\n            <div class='cb-table-cell'>\n              ");
@@ -471,7 +478,7 @@ function program6(depth0,data) {
     'value': ("Log In")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input || (depth0 && depth0.input)),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n    </div>\n    </form>\n    </div>\n    <div class='form-alt-action'>\n      <a class=\"button button\" href=\"\" ");
+  data.buffer.push("\n    </div>\n    </form>\n    </div>\n    <div class='form-alt-action'>\n      <a class=\"button button\" href=\"#\" ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleSignup", {hash:{

@@ -1,4 +1,15 @@
+# PepperMill
 
+PepperMill is a simple Todo app written with Ember.js, and a Rails API behind it. I wrote the first version in under 48 hours (check the commits!).
+
+### Running
+
+```
+$ git clone https://github.com/keighl/peppermill
+$ cd peppermill
+$ bundle install
+$ bundle exec foreman start
+```
 
 # PepperMill API
 

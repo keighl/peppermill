@@ -22,9 +22,9 @@
               </div>
               {{/linkTo}}
               {{else}}
-              <a class="button hdr-button-login" href='' {{action "loginButton" on="click"}}>
+              {{#linkTo 'login' classNames='button hdr-button-login'}}
               <strong>Join</strong>
-              </a>
+              {{/linkTo}}
               {{/if}}
             </div>
           </div>
