@@ -15,27 +15,33 @@ PP.Route = Ember.Route.extend
 
   actions:
 
-    hideErrors: ->
-      PP.set 'error', null
-
     showErrors: (error) ->
+      self = @
+      self.send 'hideFlash'
+      PP.set 'error', error
       $("html, body").animate
         scrollTop: 0
       , 300
-      PP.set 'error', error
-
-    hideFlash: ->
-      PP.set 'flash', null
+      setTimeout ->
+        self.send 'hideErrors'
+      , 4000
 
     showFlash: (message) ->
+      self = @
+      self.send 'hideErrors'
       PP.set 'flash', message
       $("html, body").animate
         scrollTop: 0
       , 300
-      self = @
       setTimeout ->
         self.send 'hideFlash'
-      , 3000
+      , 4000
+
+    hideFlash: ->
+      PP.set 'flash', null
+
+    hideErrors: ->
+      PP.set 'error', null
 
     handleError: (reason) ->
       if reason.status == 401
@@ -45,7 +51,11 @@ PP.Route = Ember.Route.extend
       else if reason.status == 404
         @transitionTo 'not_found'
       else
-        console.log reason
+        @send 'showErrors',
+          message: 'Whoops!'
+          errors: [
+            'Something went wrong on our side. Try again?'
+          ]
 
     error: (reason, transition) ->
       if reason.status == 401
@@ -55,8 +65,12 @@ PP.Route = Ember.Route.extend
       else if reason.status == 404
         @transitionTo 'not_found'
       else
+        @send 'showErrors',
+          message: 'Whoops!'
+          errors: [
+            'Something went wrong on our side. Try again?'
+          ]
         throw reason
-        console.log reason
 
     updateCurrentUser: (user) ->
       localStorage.PPAuthToken   = user.token if user?

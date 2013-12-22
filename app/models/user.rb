@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # Username
   validates_format_of :username, with: /^\d*[a-zA-Z][a-zA-Z0-9]*$/, allow_blank: false
   validates_uniqueness_of :username, case_sensitive: false
-  validates_length_of :username, minimum: 6, maximum: 16
+  validates_length_of :username, minimum: 5, maximum: 16
 
   # Email
   validates_uniqueness_of :email, case_sensitive: false

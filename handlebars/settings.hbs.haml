@@ -33,6 +33,7 @@
     .form-action
       %button.button.button-action.button-full
         Submit
+    <div {{bind-attr class=":loading requestInProgress::cb-hidden"}}></div>
     </form>
 
     .form-alt-action

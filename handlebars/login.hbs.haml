@@ -40,6 +40,7 @@
       {{input value=signup_password_confirmation type="password" placeholder="Confirm password" classNames="input"}}
     .form-action
       {{input class="button button-action button-full" type="submit" value="Join Now"}}
+    <div {{bind-attr class=":loading requestInProgress::cb-hidden"}}></div>
     </form>
     </div>
 
@@ -53,6 +54,7 @@
       {{input value=login_password type="password" placeholder="Password" classNames="input"}}
     .form-action
       {{input class="button button-action button-full" type="submit" value="Log In"}}
+    <div {{bind-attr class=":loading requestInProgress::cb-hidden"}}></div>
     </form>
     </div>
 

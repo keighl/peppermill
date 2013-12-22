@@ -480,7 +480,14 @@ function program8(depth0,data) {
     'value': ("Join Now")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input || (depth0 && depth0.input)),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n    </div>\n    </form>\n    </div>\n    <div ");
+  data.buffer.push("\n    </div>\n    <div ");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': (":loading requestInProgress::cb-hidden")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push("></div>\n    </form>\n    </div>\n    <div ");
   hashContexts = {'class': depth0};
   hashTypes = {'class': "STRING"};
   options = {hash:{
@@ -522,7 +529,14 @@ function program8(depth0,data) {
     'value': ("Log In")
   },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   data.buffer.push(escapeExpression(((stack1 = helpers.input || (depth0 && depth0.input)),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "input", options))));
-  data.buffer.push("\n    </div>\n    </form>\n    </div>\n    <div class='form-alt-action'>\n      <a class=\"button button\" href=\"#\" ");
+  data.buffer.push("\n    </div>\n    <div ");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': (":loading requestInProgress::cb-hidden")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push("></div>\n    </form>\n    </div>\n    <div class='form-alt-action'>\n      <a class=\"button button\" href=\"#\" ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "toggleSignup", {hash:{
@@ -682,7 +696,14 @@ function program6(depth0,data) {
     'type': ("password"),
     'placeholder': ("Confirm password")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n    </div>\n    <div class='form-action'>\n      <button class='button button-action button-full'>\n        Submit\n      </button>\n    </div>\n    </form>\n    <div class='form-alt-action'>\n      ");
+  data.buffer.push("\n    </div>\n    <div class='form-action'>\n      <button class='button button-action button-full'>\n        Submit\n      </button>\n    </div>\n    <div ");
+  hashContexts = {'class': depth0};
+  hashTypes = {'class': "STRING"};
+  options = {hash:{
+    'class': (":loading requestInProgress::cb-hidden")
+  },contexts:[],types:[],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  data.buffer.push(escapeExpression(((stack1 = helpers['bind-attr'] || (depth0 && depth0['bind-attr'])),stack1 ? stack1.call(depth0, options) : helperMissing.call(depth0, "bind-attr", options))));
+  data.buffer.push("></div>\n    </form>\n    <div class='form-alt-action'>\n      ");
   hashContexts = {'classNames': depth0};
   hashTypes = {'classNames': "STRING"};
   options = {hash:{

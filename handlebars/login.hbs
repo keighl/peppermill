@@ -49,6 +49,7 @@
     <div class='form-action'>
       {{input class="button button-action button-full" type="submit" value="Join Now"}}
     </div>
+    <div {{bind-attr class=":loading requestInProgress::cb-hidden"}}></div>
     </form>
     </div>
     <div {{bind-attr class="isSignup:cb-hidden"}}>
@@ -64,6 +65,7 @@
     <div class='form-action'>
       {{input class="button button-action button-full" type="submit" value="Log In"}}
     </div>
+    <div {{bind-attr class=":loading requestInProgress::cb-hidden"}}></div>
     </form>
     </div>
     <div class='form-alt-action'>
