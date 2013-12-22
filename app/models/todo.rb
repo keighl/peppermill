@@ -16,7 +16,7 @@ class Todo < ActiveRecord::Base
 
   validates_presence_of :name, :user, :due_at
 
-  validates_length_of :name, maximum: 30
+  validates_length_of :name, minimum: 3, maximum: 140
 
   # Callbacks #############################
 

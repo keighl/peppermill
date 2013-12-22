@@ -3,9 +3,6 @@
 //= require ember
 //= require moment
 //= require hogan-2.0.0
-//= require purl
-//= require parsley
-//= require spin
 //= require bootstrap-datepicker
 //= require peppermill/peppermill
 //= require peppermill/router
