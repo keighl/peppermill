@@ -1,9 +1,4 @@
 en:
-  activerecord:
-    attributes:
-      todo:
-        name: "Description"
-
   api:
     error_title: 'Oh snap!'
     error_not_found: "That item doesn't exist"

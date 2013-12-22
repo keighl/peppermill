@@ -8,6 +8,8 @@ gem 'exception_notification'
 gem 'sorcery'
 gem 'unicorn'
 gem 'jbuilder'
+gem 'dalli'
+gem 'yajl-ruby'
 
 group :development do
   gem 'capistrano', '2.14.2'

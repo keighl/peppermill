@@ -9,6 +9,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
+MultiJson.use :yajl
+
 module Peppermill
   class Application < Rails::Application
 
@@ -25,7 +27,7 @@ module Peppermill
 
     config.assets.version = '1.0'
 
-    config.assets.js_compressor = :yui
+    config.assets.js_compressor = :uglifier
 
     config.assets.initialize_on_precompile = false
 
