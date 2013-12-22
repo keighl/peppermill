@@ -11,8 +11,8 @@ staging:
   timeout: 5000
 
 production:
-  adapter: sqlite3
-  database: db/peppermill_production.sqlite3
+  adapter: postgresql
+  database: peppermill_production
   pool: 5
   timeout: 5000
 

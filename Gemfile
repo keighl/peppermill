@@ -3,7 +3,6 @@ source 'https://rubygems.org'
 ruby "2.0.0"
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
 gem 'jquery-rails'
 gem 'haml'
 gem 'exception_notification'
@@ -11,8 +10,10 @@ gem 'sorcery'
 gem 'unicorn'
 gem 'jbuilder'
 gem 'yajl-ruby'
+gem 'pg'
 
 group :development do
+  gem 'sqlite3'
   gem 'capistrano', '2.14.2'
   gem 'capistrano-ext'
   gem 'capistrano_colors'
