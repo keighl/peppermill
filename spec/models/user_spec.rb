@@ -58,7 +58,18 @@ describe User do
       user.token.should be_nil
       user.save
       user.token.should_not be_nil
+    end
+  end
 
+  describe 'case fixing' do
+    it "shuold downcase emails" do
+      user.update_attribute :email, 'ME@KEIGHL.COM'
+      user.email.should eq('me@keighl.com')
+    end
+
+    it "shuold downcase usernames" do
+      user.update_attribute :username, 'KEIGHL'
+      user.username.should eq('keighl')
     end
   end
 end

@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
   # Callbacks ########################
 
-  before_save :generate_token
+  before_save :generate_token, :fix_casing
 
   def generate_token
     rando = SecureRandom.base64(60).tr('+/=lIO0', 'pqrsxyz')
@@ -20,6 +20,11 @@ class User < ActiveRecord::Base
     else
       self.token = rando
     end
+  end
+
+  def fix_casing
+    self.email    = email.downcase
+    self.username = username.downcase
   end
 
   # Validations #######################
