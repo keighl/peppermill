@@ -8,7 +8,7 @@ PepperMill is a simple Todo app written with Ember.js, and a Rails API behind it
 $ git clone https://github.com/keighl/peppermill
 $ cd peppermill
 $ bundle install
-$ bundle exec foreman start
+$ bundle exec foreman start -f Procfile.dev
 ```
 ### Running the specs
 
