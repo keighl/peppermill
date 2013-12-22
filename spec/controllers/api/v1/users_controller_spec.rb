@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::V1::UsersController, focus: true do
+describe Api::V1::UsersController do
 
   let(:user_mock) { double(Object).as_null_object }
   let(:user) { FactoryGirl.create(:user) }

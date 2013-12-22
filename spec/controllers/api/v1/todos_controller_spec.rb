@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Api::V1::TodosController, focus: true do
+describe Api::V1::TodosController do
 
   let(:user) { FactoryGirl.create(:user) }
 
