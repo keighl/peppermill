@@ -35,6 +35,7 @@ PP.IndexController = Ember.ObjectController.extend
 
     create: ->
       @send 'hideErrors'
+      @send 'hideFlash'
       return if @get 'requestInProgress'
 
       self = @

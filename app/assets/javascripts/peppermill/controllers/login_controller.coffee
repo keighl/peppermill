@@ -18,6 +18,7 @@ PP.LoginController = Ember.ObjectController.extend
 
     toggleSignup: ->
       @send 'hideErrors'
+      @send 'hideFlash'
       @toggleProperty 'isSignup'
 
     handleLogin: (res) ->
@@ -31,6 +32,7 @@ PP.LoginController = Ember.ObjectController.extend
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
       @send 'hideErrors'
+      @send 'hideFlash'
       self    = @
       payload =
         email: self.get 'login_email'
@@ -46,6 +48,7 @@ PP.LoginController = Ember.ObjectController.extend
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
       @send 'hideErrors'
+      @send 'hideFlash'
       self    = @
       payload =
         user:

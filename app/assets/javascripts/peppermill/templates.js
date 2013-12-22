@@ -198,7 +198,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes;
-  data.buffer.push("\n  <div class='alert alert-error'>\n    <a class=\"icon-x\" href='#' ");
+  data.buffer.push("\n  <div class='alert alert-danger'>\n    <a class=\"icon-x close\" href='#' ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideErrors", {hash:{
@@ -228,6 +228,23 @@ function program2(depth0,data) {
   }
 
 function program4(depth0,data) {
+  
+  var buffer = '', hashContexts, hashTypes;
+  data.buffer.push("\n  <div class='alert alert-success'>\n    <a class=\"icon-x close\" href='#' ");
+  hashContexts = {'on': depth0};
+  hashTypes = {'on': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideFlash", {hash:{
+    'on': ("click")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("></a>\n    <h4 class='alert-header'>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "PP.flash", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</h4>\n  </div>\n  ");
+  return buffer;
+  }
+
+function program6(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes, options;
   data.buffer.push("\n  <div class='todos-filters'>\n    <a href=\"#\" ");
@@ -273,7 +290,7 @@ function program4(depth0,data) {
   return buffer;
   }
 
-function program6(depth0,data) {
+function program8(depth0,data) {
   
   var buffer = '', hashContexts, hashTypes;
   data.buffer.push("\n    ");
@@ -294,7 +311,12 @@ function program6(depth0,data) {
   data.buffer.push("\n  ");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers['if'].call(depth0, "todos", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers['if'].call(depth0, "PP.flash", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "todos", {hash:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  <div class='new-todo-wrapper'>\n    <form ");
   hashContexts = {'on': depth0};
@@ -313,7 +335,7 @@ function program6(depth0,data) {
   data.buffer.push("\n    </form>\n  </div>\n  <div class='todos'>\n    ");
   hashTypes = {};
   hashContexts = {};
-  stack1 = helpers.each.call(depth0, "todo", "in", "todos", {hash:{},inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack1 = helpers.each.call(depth0, "todo", "in", "todos", {hash:{},inverse:self.noop,fn:self.program(8, program8, data),contexts:[depth0,depth0,depth0],types:["ID","ID","ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  </div>\n</div>\n");
   return buffer;
@@ -328,7 +350,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes;
-  data.buffer.push("\n    <div class='alert alert-error'>\n      <a class=\"icon-x\" href='#' ");
+  data.buffer.push("\n    <div class='alert alert-danger'>\n      <a class=\"icon-x close\" href='#' ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideErrors", {hash:{
@@ -359,11 +381,28 @@ function program2(depth0,data) {
 
 function program4(depth0,data) {
   
+  var buffer = '', hashContexts, hashTypes;
+  data.buffer.push("\n    <div class='alert alert-success'>\n      <a class=\"icon-x close\" href='#' ");
+  hashContexts = {'on': depth0};
+  hashTypes = {'on': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideFlash", {hash:{
+    'on': ("click")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("></a>\n      <h4 class='alert-header'>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "PP.flash", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</h4>\n    </div>\n    ");
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
   
   data.buffer.push("\n      Or log in\n      ");
   }
 
-function program6(depth0,data) {
+function program8(depth0,data) {
   
   
   data.buffer.push("\n      wanna join?\n      ");
@@ -373,6 +412,11 @@ function program6(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "PP.error", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "PP.flash", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    <div class='login-teaser'>\n      <h1>\n        <span>\n          Do todos.\n        </span>\n        <span>\n          Like a\n          <strong>boss.</strong>\n        </span>\n      </h1>\n    </div>\n    <div ");
   hashContexts = {'class': depth0};
@@ -487,7 +531,7 @@ function program6(depth0,data) {
   data.buffer.push(">\n      ");
   hashTypes = {};
   hashContexts = {};
-  stack2 = helpers['if'].call(depth0, "isSignup", {hash:{},inverse:self.program(6, program6, data),fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  stack2 = helpers['if'].call(depth0, "isSignup", {hash:{},inverse:self.program(8, program8, data),fn:self.program(6, program6, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n      </a>\n    </div>\n  </div>\n</div>\n");
   return buffer;
@@ -524,7 +568,7 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = '', stack1, hashContexts, hashTypes;
-  data.buffer.push("\n    <div class='alert alert-error'>\n      <a class=\"icon-x\" href='#' ");
+  data.buffer.push("\n    <div class='alert alert-danger'>\n      <a class=\"icon-x close\" href='#' ");
   hashContexts = {'on': depth0};
   hashTypes = {'on': "STRING"};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideErrors", {hash:{
@@ -555,6 +599,23 @@ function program2(depth0,data) {
 
 function program4(depth0,data) {
   
+  var buffer = '', hashContexts, hashTypes;
+  data.buffer.push("\n    <div class='alert alert-success'>\n      <a class=\"icon-x close\" href='#' ");
+  hashContexts = {'on': depth0};
+  hashTypes = {'on': "STRING"};
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "hideFlash", {hash:{
+    'on': ("click")
+  },contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("></a>\n      <h4 class='alert-header'>");
+  hashTypes = {};
+  hashContexts = {};
+  data.buffer.push(escapeExpression(helpers._triageMustache.call(depth0, "PP.flash", {hash:{},contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
+  data.buffer.push("</h4>\n    </div>\n    ");
+  return buffer;
+  }
+
+function program6(depth0,data) {
+  
   
   data.buffer.push("\n      Logout\n      ");
   }
@@ -563,6 +624,11 @@ function program4(depth0,data) {
   hashTypes = {};
   hashContexts = {};
   stack1 = helpers['if'].call(depth0, "PP.error", {hash:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    ");
+  hashTypes = {};
+  hashContexts = {};
+  stack1 = helpers['if'].call(depth0, "PP.flash", {hash:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n    <form ");
   hashContexts = {'on': depth0};
@@ -621,7 +687,7 @@ function program4(depth0,data) {
   hashTypes = {'classNames': "STRING"};
   options = {hash:{
     'classNames': ("button")
-  },inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
+  },inverse:self.noop,fn:self.program(6, program6, data),contexts:[depth0],types:["STRING"],hashContexts:hashContexts,hashTypes:hashTypes,data:data};
   stack2 = ((stack1 = helpers.linkTo || (depth0 && depth0.linkTo)),stack1 ? stack1.call(depth0, "logout", options) : helperMissing.call(depth0, "linkTo", "logout", options));
   if(stack2 || stack2 === 0) { data.buffer.push(stack2); }
   data.buffer.push("\n    </div>\n    <br>\n    <br>\n    <div class='form-item'>\n      <label>Your API Token</label>\n      ");

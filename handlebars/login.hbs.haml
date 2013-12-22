@@ -1,13 +1,19 @@
 .login
   .container
     {{#if PP.error}}
-    .alert.alert-error
-      <a class="icon-x" href='#' {{action "hideErrors" on="click"}}></a>
+    .alert.alert-danger
+      <a class="icon-x close" href='#' {{action "hideErrors" on="click"}}></a>
       %h4.alert-header {{PP.error.message}}
       %ul
         {{#each e in PP.error.errors}}
         %li {{e}}
         {{/each}}
+    {{/if}}
+
+    {{#if PP.flash}}
+    .alert.alert-success
+      <a class="icon-x close" href='#' {{action "hideFlash" on="click"}}></a>
+      %h4.alert-header {{PP.flash}}
     {{/if}}
 
     .login-teaser

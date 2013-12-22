@@ -6,6 +6,7 @@ PP.SettingsController = Ember.ObjectController.extend
 
     update: ->
       @send 'hideErrors'
+      @send 'hideFlash'
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
 
@@ -23,6 +24,7 @@ PP.SettingsController = Ember.ObjectController.extend
         self.set 'requestInProgress', false
         self.send 'updateCurrentUser', res.data.current_user
         self.set 'model', res.data
+        self.send 'showFlash', 'Your settings were updated!'
       , (res) ->
         self.set 'requestInProgress', false
         self.send('handleError', res)

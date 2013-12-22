@@ -1,14 +1,20 @@
 <div class='settings'>
   <div class='container'>
     {{#if PP.error}}
-    <div class='alert alert-error'>
-      <a class="icon-x" href='#' {{action "hideErrors" on="click"}}></a>
+    <div class='alert alert-danger'>
+      <a class="icon-x close" href='#' {{action "hideErrors" on="click"}}></a>
       <h4 class='alert-header'>{{PP.error.message}}</h4>
       <ul>
         {{#each e in PP.error.errors}}
         <li>{{e}}</li>
         {{/each}}
       </ul>
+    </div>
+    {{/if}}
+    {{#if PP.flash}}
+    <div class='alert alert-success'>
+      <a class="icon-x close" href='#' {{action "hideFlash" on="click"}}></a>
+      <h4 class='alert-header'>{{PP.flash}}</h4>
     </div>
     {{/if}}
     <form {{action "update" on="submit"}}>

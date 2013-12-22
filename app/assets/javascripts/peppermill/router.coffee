@@ -11,16 +11,31 @@ PP.Route = Ember.Route.extend
 
   beforeModel: (transition) ->
     transition.send 'hideErrors'
+    transition.send 'hideFlash'
 
   actions:
 
     hideErrors: ->
-      app = @controllerFor 'application'
       PP.set 'error', null
 
     showErrors: (error) ->
-      app = @controllerFor 'application'
+      $("html, body").animate
+        scrollTop: 0
+      , 300
       PP.set 'error', error
+
+    hideFlash: ->
+      PP.set 'flash', null
+
+    showFlash: (message) ->
+      PP.set 'flash', message
+      $("html, body").animate
+        scrollTop: 0
+      , 300
+      self = @
+      setTimeout ->
+        self.send 'hideFlash'
+      , 3000
 
     handleError: (reason) ->
       if reason.status == 401
