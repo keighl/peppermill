@@ -16,8 +16,6 @@ Peppermill::Application.configure do
 
   config.assets.digest = true
 
-  config.cache_store = :dalli_store
-
   config.i18n.fallbacks = true
 
   config.active_support.deprecation = :notify

@@ -8,7 +8,6 @@ gem 'exception_notification'
 gem 'sorcery'
 gem 'unicorn'
 gem 'jbuilder'
-gem 'dalli'
 gem 'yajl-ruby'
 
 group :development do
