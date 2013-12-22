@@ -27,7 +27,7 @@ All API requests must be authenticated to user by supplying a valid API token. Y
 To supply your key, simply append it as a `token` paramter to the request:
 
 ```
-/api/v1/todos?token=YOUR_API_KEY
+http://peppermill.herokuapp.com/api/v1/todos?token=YOUR_API_KEY
 ```
 
 ## Object Payloads

@@ -720,7 +720,7 @@ function program6(depth0,data) {
     'readonly': ("readonly"),
     'classNames': ("input input-with-border")
   },contexts:[depth0],types:["ID"],hashContexts:hashContexts,hashTypes:hashTypes,data:data})));
-  data.buffer.push("\n    </div>\n    <p>Use this key to mange your todos via our API</p>\n  </div>\n</div>\n");
+  data.buffer.push("\n    </div>\n    <p>\n      Use this key to mange your todos via our\n      <a href='https://github.com/keighl/peppermill#peppermill-api'>API</a>\n    </p>\n  </div>\n</div>\n");
   return buffer;
   
 });
