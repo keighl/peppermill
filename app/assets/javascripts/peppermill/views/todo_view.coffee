@@ -33,6 +33,7 @@ PP.TodoView = Ember.View.extend
       separator: '-',
       format: 'yyyy-mm-dd'
     .on 'changeDate', (e) ->
+      console.log e.date
       self.set 'todo.due_at', moment(e.date).format('YYYY-MM-DD')
       $('.datepicker', $self).datepicker 'hide'
       self.send 'update'
@@ -68,7 +69,6 @@ PP.TodoView = Ember.View.extend
     update: ->
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
-      @send 'hideErrors'
 
       self       = @
       todo       = self.get 'todo'
@@ -79,6 +79,8 @@ PP.TodoView = Ember.View.extend
           complete: todo.complete
           due_at: todo.due_at
           priority: todo.priority
+
+      controller.send 'hideErrors'
 
       if self.get('todoEditName')
         payload.todo.name = self.get 'todoEditName'
@@ -95,13 +97,14 @@ PP.TodoView = Ember.View.extend
     destroyTodo: ->
       return if @get 'requestInProgress'
       @set 'requestInProgress', true
-      @send 'hideErrors'
 
       self       = @
       todo       = self.get 'todo'
       controller = self.get 'controller'
       payload    = PP.Utils.applyCredsToData
         _method: 'DELETE'
+
+      controller.send 'hideErrors'
 
       $.post("#{PP.API_BASE}/todos/#{todo.id}", payload).then (res) ->
         self.set 'requestInProgress', false

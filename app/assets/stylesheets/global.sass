@@ -14,6 +14,10 @@ body
   margin: 0px
   font-size: 16px
   overflow-x: hidden
+  padding-top: 60px
+
+  +tablet-desktop
+    padding-top: 100px
 
 ////////////////////// TYPE
 
@@ -37,7 +41,6 @@ h6
   font-weight: bold
   margin-bottom: 0.5em
   line-height: 1.5em
-  text-transform: uppercase
 
 h1,
 h2
@@ -143,6 +146,9 @@ hr
 .container
   +container
 
+  +desktop
+    max-width: 50em
+
 // TABLE
 
 .cb-table
@@ -188,3 +194,48 @@ hr
   width: 50%
   margin: 0
   padding: 0
+
+.settings .container
+  +tablet-desktop
+    max-width: 40em
+
+.login .container
+  +tablet-desktop
+    max-width: 40em
+
+.not-found .container
+  +tablet-desktop
+    max-width: 40em
+
+.login-teaser
+  text-align: right
+
+.login-teaser h1
+  line-height: 1.2em
+
+.login-teaser span
+  display: block
+
+.login-teaser strong
+  border-bottom: 2px solid $color
+
+.placeholder .login label
+  display: none
+
+.not-found-radar
+  text-align: center
+  font-size: 8em
+
+  +tablet-desktop
+    font-size: 10em
+
+.not-found-teaser
+  text-align: center
+
+.not-found-teaser h1
+  line-height: 1.2em
+
+.not-found-teaser span
+  display: block
+
+.not-found-radar

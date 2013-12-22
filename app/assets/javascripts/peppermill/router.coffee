@@ -3,7 +3,7 @@ PP.Router.map ()->
   @route 'login'
   @route 'logout'
   @route 'settings'
-  @route 'not_found'
+  @route "not_found", path: "*path"
 
 # Inheritance #####################################################################
 
@@ -16,11 +16,11 @@ PP.Route = Ember.Route.extend
 
     hideErrors: ->
       app = @controllerFor 'application'
-      app.set 'error', null
+      PP.set 'error', null
 
     showErrors: (error) ->
       app = @controllerFor 'application'
-      app.set 'error', error
+      PP.set 'error', error
 
     handleError: (reason) ->
       if reason.status == 401

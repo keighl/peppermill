@@ -1,41 +1,73 @@
-<a href="" {{action "toggleSignup" on="click" }}>
-{{#if isSignup}}
-Log in?
-{{else}}
-Join?
-{{/if}}
-</a>
-<div {{bind-attr class="isSignup::cb-hidden"}}>
-<form {{action "signup" on="submit"}}>
-<div class='form-item'>
-  <label for='username'>Username</label>
-  {{input value=signup_username type="text" placeholder="Username" classNames="input"}}
-</div>
-<div class='form-item'>
-  <label for='username'>Email</label>
-  {{input value=signup_email type="email" placeholder="Email" classNames="input"}}
-</div>
-<div class='form-item'>
-  <label for='username'>Password</label>
-  {{input value=signup_password type="password" placeholder="Password" classNames="input"}}
-</div>
-<div class='form-item'>
-  <label for='username'>Confirm Password</label>
-  {{input value=signup_password_confirmation type="password" placeholder="Confirm password" classNames="input"}}
-</div>
-{{input class="button button-action button-full" type="submit" value="Join Now"}}
-</form>
-</div>
-<div {{bind-attr class="isSignup:cb-hidden"}}>
-<form {{action "login" on="submit"}}>
-<div class='form-item'>
-  <label for='login_email'>Username or Email</label>
-  {{input value=login_email type="text" placeholder="Username or Email" classNames="input"}}
-</div>
-<div class='form-item'>
-  <label for='login_password'>Password</label>
-  {{input value=login_password type="password" placeholder="Password" classNames="input"}}
-</div>
-{{input class="button button-action button-full" type="submit" value="Log In"}}
-</form>
+<div class='login'>
+  <div class='container'>
+    {{#if PP.error}}
+    <div class='alert alert-error'>
+      <a class="icon-x" href='#' {{action "hideErrors" on="click"}}></a>
+      <h4 class='alert-header'>{{PP.error.message}}</h4>
+      <ul>
+        {{#each e in PP.error.errors}}
+        <li>{{e}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    <div class='login-teaser'>
+      <h1>
+        <span>
+          Do todos.
+        </span>
+        <span>
+          Like a
+          <strong>boss.</strong>
+        </span>
+      </h1>
+    </div>
+    <div {{bind-attr class="isSignup::cb-hidden"}}>
+    <form {{action "signup" on="submit"}}>
+    <div class='form-item'>
+      <label for='username'>Username</label>
+      {{input value=signup_username type="text" placeholder="Username" classNames="input"}}
+    </div>
+    <div class='form-item'>
+      <label for='username'>Email</label>
+      {{input value=signup_email type="email" placeholder="Email" classNames="input"}}
+    </div>
+    <div class='form-item'>
+      <label for='username'>Password</label>
+      {{input value=signup_password type="password" placeholder="Password" classNames="input"}}
+    </div>
+    <div class='form-item'>
+      <label for='username'>Confirm Password</label>
+      {{input value=signup_password_confirmation type="password" placeholder="Confirm password" classNames="input"}}
+    </div>
+    <div class='form-action'>
+      {{input class="button button-action button-full" type="submit" value="Join Now"}}
+    </div>
+    </form>
+    </div>
+    <div {{bind-attr class="isSignup:cb-hidden"}}>
+    <form {{action "login" on="submit"}}>
+    <div class='form-item'>
+      <label for='login_email'>Username or Email</label>
+      {{input value=login_email type="text" placeholder="Username or Email" classNames="input"}}
+    </div>
+    <div class='form-item'>
+      <label for='login_password'>Password</label>
+      {{input value=login_password type="password" placeholder="Password" classNames="input"}}
+    </div>
+    <div class='form-action'>
+      {{input class="button button-action button-full" type="submit" value="Log In"}}
+    </div>
+    </form>
+    </div>
+    <div class='form-alt-action'>
+      <a class="button button" href="" {{action "toggleSignup" on="click" }}>
+      {{#if isSignup}}
+      Or log in
+      {{else}}
+      wanna join?
+      {{/if}}
+      </a>
+    </div>
+  </div>
 </div>

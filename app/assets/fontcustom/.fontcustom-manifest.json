@@ -1,16 +1,19 @@
 {
   "fonts": [
-    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.ttf",
-    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.woff",
-    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.eot",
-    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_5b07907c3e02f6b5e8fc33151d515d81.svg"
+    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_78438e4f380ba60473a0776746daeb88.ttf",
+    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_78438e4f380ba60473a0776746daeb88.woff",
+    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_78438e4f380ba60473a0776746daeb88.eot",
+    "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/fontcustom_78438e4f380ba60473a0776746daeb88.svg"
   ],
   "templates": [
     "/Users/keighl/Dropbox/www/peppermill/app/assets/images/fonts/_fontcustom.scss"
   ],
   "glyphs": [
     "back",
+    "calendar",
     "camera",
+    "check-empty",
+    "check-full",
     "chevron",
     "circle-check",
     "clam",
@@ -39,6 +42,7 @@
     "radar",
     "settings",
     "share",
+    "star",
     "trophy",
     "tw",
     "twitter",

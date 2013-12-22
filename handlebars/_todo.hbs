@@ -1,29 +1,40 @@
-{{#if view.editMode}}
-<form {{action "updateName" on="submit" target="view"}}>
-{{view PP.TodoEditNameField valueBinding="view.todoEditName" classNames='todo-edit-name-field'}}
-</form>
-{{else}}
-<a href='#' {{action "toggleEditMode" on="click" target="view"}}>
-{{view.todo.name}}
-</a>
-<a href='#' {{action "toggleComplete" on="click" target="view"}} {{bind-attr class="view.todo.complete:complete:incomplete"}}>
-{{#unless view.todo.complete}}
-Complete?
-{{else}}
-Incomplete?
-{{/unless}}
-</a>
-<a class="datepicker" href='#' {{action "changeDate" on="click" target="view"}} {{bind-attr data-date="view.todo.due_at"}} data-date-format='yyyy-mm-dd'>
-{{view.dueAt}}
-</a>
-<a href='#' {{action "togglePriority" on="click" target="view"}} {{bind-attr class="view.todo.priority:high:low"}}>
-{{#if view.todo.priority}}
-High
-{{else}}
-Low
-{{/if}}
-</a>
-<a href='#' {{action "destroyTodo" on="click" target="view"}}>
-<span class='icon-x'></span>
-</a>
-{{/if}}
+<div class='todo'>
+  {{#if view.editMode}}
+  <div class='todo-edit'>
+    <form {{action "updateName" on="submit" target="view"}}>
+    {{view PP.TodoEditNameField valueBinding="view.todoEditName" classNames='todo-edit-name-field input'}}
+    </form>
+  </div>
+  {{/if}}
+  <div {{bind-attr class="view.editMode:cb-hidden"}}>
+  <div class='cb-table'>
+    <div class='cb-table-row'>
+      <div class='cb-table-cell todo-completion-cell'>
+        <a href='#' {{action "toggleComplete" on="click" target="view"}} {{bind-attr class=":todo-completion view.todo.complete:icon-check-full:icon-check-empty"}}>
+        </a>
+      </div>
+      <div class='cb-table-cell todo-name-cell'>
+        <a class='todo-name' href='#' {{action "toggleEditMode" on="click" target="view"}} title='Edit'>
+        <span {{bind-attr class='view.todo.complete:complete'}}>
+        {{view.todo.name}}
+        </span>
+        </a>
+        <div class='todo-due-date'>
+          <a href='#' {{action "destroyTodo" on="click" target="view"}} title='Delete'>
+          <span class='icon-x'></span>
+          </a>
+          &nbsp;
+          <a title='Due Date' class="datepicker" href='#' {{action "changeDate" on="click" target="view"}} {{bind-attr data-date="view.todo.due_at"}} data-date-format='yyyy-mm-dd'>
+          <span class='icon-calendar'></span>
+          {{view.dueAt}}
+          </a>
+        </div>
+      </div>
+      <div class='cb-table-cell todo-priority-cell'>
+        <a title='Priority' href='#' {{action "togglePriority" on="click" target="view"}} {{bind-attr class=":icon-star :todo-priority view.todo.priority:active"}}>
+        </a>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

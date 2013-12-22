@@ -1,0 +1,103 @@
+@import constants
+
+.todos-filters
+  margin-bottom: 1em
+  text-align: center
+
+  +tablet-desktop
+    margin-bottom: 2em
+    text-align: right
+
+
+a.todos-filter
+  padding: 0.4em 0.5em
+  font-size: 0.8em
+  display: inline
+  display: inline-block
+  margin-left: 0.5em
+  background-color: transparent
+  color: $link-color
+  border: 1px solid $link-color
+
+  +tablet-desktop
+    margin-left: 1em
+    padding: 0.8em 1em
+    font-size: 0.8em
+
+a.todos-filter:first-child
+  margin-left: 0
+
+a.todos-filter-active
+  background-color: $link-color
+  color: white
+  border: 1px solid $link-color
+
+.new-todo-wrapper
+  margin-bottom: 1em
+
+  +tablet-desktop
+    margin-bottom: 2em
+
+input.new-todo
+  +tablet-desktop
+    font-size: 2.5em
+
+.todos
+  margin-bottom: 10em
+
+.todo
+  padding: 1em 0em
+  border-bottom: 1px solid #ddd
+
+.todo-completion-cell
+  font-size: 1.5em
+  width: 40px
+  vertical-align: top
+
+.todo-completion-cell a.icon-check-full
+  color: green
+
+.todo-name-cell
+  // width: 100%
+
+a.todo-name
+  display: block
+  font-weight: bold
+  font-size: 1.1em
+
+
+  +tablet-desktop
+    font-size: 1.4em
+
+.todo-name-cell .complete
+  text-decoration: line-through
+  color: #ddd
+
+.todo-priority-cell
+  width: 50px
+  text-align: right
+  font-size: 1.5em
+
+  +tablet-desktop
+    width: 50px
+
+.todo-priority-cell a
+  color: #ddd
+
+.todo-priority-cell a.active
+  color: #F0E700
+
+.todo-due-date
+  padding-top: 0.25em
+
+.todo-due-date a
+  color: #444
+
+.todo-edit input
+  border: none
+  font-weight: bold
+
+  font-size: 1.1em
+
+  +tablet-desktop
+    font-size: 1.4em

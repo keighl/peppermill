@@ -1,27 +1,36 @@
-{{#if isLoggedIn}}
-{{#linkTo 'settings' classNames='hdr-user'}}
-<div class='hdr-user-name'></div>
-hi,
-{{currentUser.username}}
-{{/linkTo}}
-{{#linkTo 'logout'}}
-Logout?
-{{/linkTo}}
-<hr>
-{{else}}
-<a class="button hdr-button-login" href='' {{action "loginButton" on="click"}}>
-<strong>Login</strong>
-</a>
-{{/if}}
-{{#if error}}
-<div class='alert alert-error'>
-  <h4 class='alert-header'>{{error.message}}</h4>
-  <ul>
-    {{#each e in error.errors}}
-    <li>{{e}}</li>
-    {{/each}}
-  </ul>
+<div class='main'>
+  <header class='hdr'>
+    <div class='container'>
+      <div class='hdr-inner'>
+        <div class='cb-table-auto hdr-logo-cell'>
+          <div class='cb-table-row'>
+            <div class='cb-table-cell'>
+              {{#linkTo 'index' classNames='hdr-logo'}}
+              Pepper<strong>Mill</strong>
+              {{/linkTo}}
+            </div>
+          </div>
+        </div>
+        <div class='cb-table-auto hdr-user-cell'>
+          <div class='cb-table-row'>
+            <div class='cb-table-cell'>
+              {{#if isLoggedIn}}
+              {{#linkTo 'settings' classNames='hdr-user'}}
+              <div class='hdr-user-name'>
+                hi,
+                <strong>{{currentUser.username}}</strong>
+              </div>
+              {{/linkTo}}
+              {{else}}
+              <a class="button hdr-button-login" href='' {{action "loginButton" on="click"}}>
+              <strong>Join</strong>
+              </a>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  {{outlet}}
 </div>
-<hr>
-{{/if}}
-{{outlet}}

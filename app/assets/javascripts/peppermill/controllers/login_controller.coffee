@@ -1,13 +1,13 @@
 PP.LoginController = Ember.ObjectController.extend
 
   requestInProgress: false
-  isSignup: false
+  isSignup: true
 
   actions:
 
     resetController: ->
       @set 'model', {}
-      @set 'isSignup', false
+      @set 'isSignup', true
       @set 'requestInProgress', false
       @set 'login_email', ""
       @set 'login_password', ""

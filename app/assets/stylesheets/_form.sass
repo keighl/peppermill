@@ -1,0 +1,54 @@
+@import constants
+
+input.input,
+textarea.input
+  font-family: 'Varela Round', sans-serif
+  color: rgba(0, 0, 0, 0.7)
+  padding: 0.5em
+  +box-sizing(border-box)
+  width: 100%
+  max-width: 100%
+  border: none
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15)
+  outline: none
+  font-size: 1em
+  margin-bottom: 0
+
+input.input:focus,
+textarea.input:focus
+  border-color: rgba(0, 0, 0, 0.2)
+
+textarea.input
+  padding: 0.5em
+  min-height: 100px
+
+.form-item
+  margin-bottom: 1em
+
+.form-action
+  padding-top: 1em
+
+label
+  display: inline-block
+  margin: 0 0 0.3em
+  font-size: 0.9em
+  font-weight: strong
+  padding: 0em 0.5em
+  margin-bottom: 0.5em
+  background-color: #F0E700
+  color: black
+  font: bold
+  text-transform: uppercase
+
+
+.settings input.input
+  +tablet-desktop
+    font-size: 1.5em
+
+.login input.input
+  +tablet-desktop
+    font-size: 1.5em
+
+.form-alt-action
+  padding-top: 1em
+  text-align: right

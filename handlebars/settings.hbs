@@ -1,27 +1,51 @@
-<form {{action "update" on="submit"}}>
-{{view Ember.TextField type="hidden" valueBinding="upload_hash"}}
-<div class='form-item'>
-  <label for='username'>Username</label>
-  {{view Ember.TextField name='username' valueBinding="user.username" classNames='input' placeholder='Username' }}
+<div class='settings'>
+  <div class='container'>
+    {{#if PP.error}}
+    <div class='alert alert-error'>
+      <a class="icon-x" href='#' {{action "hideErrors" on="click"}}></a>
+      <h4 class='alert-header'>{{PP.error.message}}</h4>
+      <ul>
+        {{#each e in PP.error.errors}}
+        <li>{{e}}</li>
+        {{/each}}
+      </ul>
+    </div>
+    {{/if}}
+    <form {{action "update" on="submit"}}>
+    {{view Ember.TextField type="hidden" valueBinding="upload_hash"}}
+    <div class='form-item'>
+      <label for='username'>Username</label>
+      {{view Ember.TextField name='username' valueBinding="user.username" classNames='input' placeholder='Username' }}
+    </div>
+    <div class='form-item'>
+      <label for='email'>Email</label>
+      {{view Ember.TextField name='email' valueBinding="user.email" classNames='input' type="email" placeholder='Email' }}
+    </div>
+    <div class='form-item'>
+      <label for='password'>Password</label>
+      {{view Ember.TextField name='password' valueBinding="password" classNames='input' type="password" placeholder='Password'}}
+    </div>
+    <div class='form-item'>
+      <label for='password_confirmation'>Confirm Password</label>
+      {{view Ember.TextField name='password_confirmation' valueBinding="password_confirmation" classNames='input' type="password" placeholder='Confirm password' }}
+    </div>
+    <div class='form-action'>
+      <button class='button button-action button-full'>
+        Submit
+      </button>
+    </div>
+    </form>
+    <div class='form-alt-action'>
+      {{#linkTo 'logout' classNames='button'}}
+      Logout
+      {{/linkTo}}
+    </div>
+    <br>
+    <br>
+    <div class='form-item'>
+      <label>Your API Key</label>
+      {{view Ember.TextField name='api_key' valueBinding="user.token" readonly="readonly" classNames='input'}}
+    </div>
+    <p>Use this key to mange your todos via our API</p>
+  </div>
 </div>
-<div class='form-item'>
-  <label for='email'>Email</label>
-  {{view Ember.TextField name='email' valueBinding="user.email" classNames='input' type="email" placeholder='Email' }}
-</div>
-<div class='form-item'>
-  <label for='password'>Password</label>
-  {{view Ember.TextField name='password' valueBinding="password" classNames='input' type="password" placeholder='Password'}}
-</div>
-<div class='form-item'>
-  <label for='password_confirmation'>Confirm Password</label>
-  {{view Ember.TextField name='password_confirmation' valueBinding="password_confirmation" classNames='input' type="password" placeholder='Confirm password' }}
-</div>
-<div class='new-move-actions'>
-  <button class='button button-action button-full'>
-    Submit
-  </button>
-</div>
-</form>
-<hr>
-Your API Key:
-{{view Ember.TextField name='api_key' valueBinding="user.token" readonly="readonly"}}

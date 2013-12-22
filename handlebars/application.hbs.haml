@@ -1,31 +1,26 @@
+.main
+  %header.hdr
+    .container
+      .hdr-inner
+        .cb-table-auto.hdr-logo-cell
+          .cb-table-row
+            .cb-table-cell
+              {{#linkTo 'index' classNames='hdr-logo'}}
+              Pepper<strong>Mill</strong>
+              {{/linkTo}}
+        .cb-table-auto.hdr-user-cell
+          .cb-table-row
+            .cb-table-cell
+              {{#if isLoggedIn}}
+              {{#linkTo 'settings' classNames='hdr-user'}}
+              .hdr-user-name
+                hi,
+                %strong {{currentUser.username}}
+              {{/linkTo}}
+              {{else}}
+              <a class="button hdr-button-login" href='' {{action "loginButton" on="click"}}>
+              %strong Join
+              </a>
+              {{/if}}
 
-{{#if isLoggedIn}}
-{{#linkTo 'settings' classNames='hdr-user'}}
-.hdr-user-name
-hi,
-{{currentUser.username}}
-{{/linkTo}}
-
-{{#linkTo 'logout'}}
-Logout?
-{{/linkTo}}
-
-%hr
-
-{{else}}
-<a class="button hdr-button-login" href='' {{action "loginButton" on="click"}}>
-%strong Login
-</a>
-{{/if}}
-
-{{#if error}}
-.alert.alert-error
-  %h4.alert-header {{error.message}}
-  %ul
-    {{#each e in error.errors}}
-    %li {{e}}
-    {{/each}}
-%hr
-{{/if}}
-
-{{outlet}}
+  {{outlet}}

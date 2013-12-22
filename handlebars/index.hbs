@@ -1,19 +1,36 @@
-<h1>Todos</h1>
-{{#if todos}}
-<a href="#" {{action "sortBy" "by_incomplete" on="click"}} {{bind-attr class="isByIncomplete:active"}}>
-Incomplete
-</a>
-<a href="#" {{action "sortBy" "by_due_date" on="click"}} {{bind-attr class="isByDueDate:active"}}>
-Due Date
-</a>
-<a href="#" {{action "sortBy" "by_priority" on="click"}} {{bind-attr class="isByPriority:active"}}>
-Priority
-</a>
-{{/if}}
-<hr>
-<form {{action "create" on="submit"}}>
-{{view Ember.TextField valueBinding="new_todo_name" placeholder='Add a todo...' classNames="new-todo-name"}}
-</form>
-{{#each todo in todos}}
-{{view PP.TodoView todoBinding='todo'}}
-{{/each}}
+<div class='container'>
+  {{#if PP.error}}
+  <div class='alert alert-error'>
+    <a class="icon-x" href='#' {{action "hideErrors" on="click"}}></a>
+    <h4 class='alert-header'>{{PP.error.message}}</h4>
+    <ul>
+      {{#each e in PP.error.errors}}
+      <li>{{e}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  {{/if}}
+  {{#if todos}}
+  <div class='todos-filters'>
+    <a href="#" {{action "sortBy" "by_incomplete" on="click"}} {{bind-attr class=":button :todos-filter isByIncomplete:todos-filter-active"}}>
+    Incomplete
+    </a>
+    <a href="#" {{action "sortBy" "by_due_date" on="click"}} {{bind-attr class=":button :todos-filter isByDueDate:todos-filter-active"}}>
+    Due Date
+    </a>
+    <a href="#" {{action "sortBy" "by_priority" on="click"}} {{bind-attr class=":button :todos-filter isByPriority:todos-filter-active"}}>
+    Priority
+    </a>
+  </div>
+  {{/if}}
+  <div class='new-todo-wrapper'>
+    <form {{action "create" on="submit"}}>
+    {{view Ember.TextField valueBinding="new_todo_name" placeholder='Add a todo...' classNames="new-todo input"}}
+    </form>
+  </div>
+  <div class='todos'>
+    {{#each todo in todos}}
+    {{view PP.TodoView todoBinding='todo'}}
+    {{/each}}
+  </div>
+</div>
