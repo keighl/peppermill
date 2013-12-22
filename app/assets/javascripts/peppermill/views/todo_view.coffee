@@ -33,7 +33,6 @@ PP.TodoView = Ember.View.extend
       separator: '-',
       format: 'yyyy-mm-dd'
     .on 'changeDate', (e) ->
-      console.log e.date
       self.set 'todo.due_at', moment(e.date).format('YYYY-MM-DD')
       $('.datepicker', $self).datepicker 'hide'
       self.send 'update'
