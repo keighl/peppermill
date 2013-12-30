@@ -11,6 +11,17 @@
   = javascript_include_tag "modernizr"
   %link{ rel: "shortcut icon", href: "favicon.png" }
   %link{ rel: "apple-touch-icon", href: "favicon.png" }
+
+  :coffee
+    if Modernizr.history
+      hash = window.location.hash
+      if hash.length
+        href                 = hash.replace '#', ''
+        window.location.href = href
+    else
+      pathname = window.location.pathname
+      if pathname.length > 1
+        window.location.href = '/#' + pathname
 %body
   = javascript_include_tag "application"
   = yield
